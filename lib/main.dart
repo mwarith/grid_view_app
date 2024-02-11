@@ -4,8 +4,33 @@ void main() {
   runApp(const App());
 }
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
   const App({super.key});
+
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  Widget custom_container({
+    required String text,
+    required Color color,
+  }) {
+    return Container(
+      width: 150,
+      height: 150,
+      color: color,
+      child: Center(
+        child: Text(
+          text,
+          style: const TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,41 +42,37 @@ class App extends StatelessWidget {
           crossAxisSpacing: 3,
           mainAxisSpacing: 3,
           children: [
-            Container(
-              width: 200,
-              height: 200,
-              color: Colors.black,
-              child: const Text(
-                "Hello Guys welcome",
-                style: TextStyle(fontSize: 50),
-              ),
+            custom_container(
+              text: "Hello Guys welcome",
+              color: Colors.cyan,
             ),
-            Container(
-              width: 200,
-              height: 200,
-              color: Colors.green,
-              child: const Text(
-                "Hello Guys welcome",
-                style: TextStyle(fontSize: 50),
-              ),
-            ),
-            Container(
-              width: 200,
-              height: 200,
-              color: Colors.blue,
-              child: const Text(
-                "Hello Guys welcome",
-                style: TextStyle(fontSize: 50),
-              ),
-            ),
-            Container(
-              width: 200,
-              height: 200,
+            custom_container(
+              text: "Hello Guys welcome",
               color: Colors.red,
-              child: const Text(
-                "Hello Guys welcome",
-                style: TextStyle(fontSize: 50),
-              ),
+            ),
+            custom_container(
+              text: "Hello Guys welcome",
+              color: Colors.green,
+            ),
+            custom_container(
+              text: "Hello Guys welcome",
+              color: Colors.blue,
+            ),
+            custom_container(
+              text: "Hello Guys welcome",
+              color: Colors.grey,
+            ),
+            custom_container(
+              text: "Hello Guys welcome",
+              color: Colors.orange,
+            ),
+            custom_container(
+              text: "Hello Guys welcome",
+              color: Colors.green,
+            ),
+            custom_container(
+              text: "Hello Guys welcome",
+              color: Colors.blue,
             ),
           ],
         ),
